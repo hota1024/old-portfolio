@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>ScratchMessages</title>
+  </head>
+  <body>
+    <h1 class="cent">Scratch messages</h1>
+    <div class="content">
+      <form onsubmit="return false;" id="user_form">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="user_name">
+          <label class="mdl-textfield__label" for="user_name">Your user name</label>
+          <span class="mdl-textfield__error"></span>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: white;" id="user_form_submit">
+          OK
+        </button>
+        <br />
+        <div id="progress" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active" style="display: none;"></div>
+      </form>
+      <div id="messages" style="display: none; text-align: center;">
+        <img class="user_icon">
+        <h4><span class="user_name"></span></h4>
+        <div style="padding: 32px; text-align: center;">
+          未読メッセージ数：<strong><span class="fread_messages"></span></strong>件
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

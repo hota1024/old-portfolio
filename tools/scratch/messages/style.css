@@ -1,0 +1,25 @@
+.cent{
+  text-align: center;
+}
+
+body{
+  background-color: #25aff4;
+  color: white;
+}
+
+.content{
+  text-align: center;
+  width: 100%;
+}
+
+.content form{
+  text-align: center;
+}
+
+.hide{
+  display: none;
+}
+
+a{
+  color: white;
+}
