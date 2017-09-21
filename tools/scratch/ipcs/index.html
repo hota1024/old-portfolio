@@ -101,6 +101,11 @@
             });
           });
         });
+          if(location.hash != ""){
+            console.log(location.hash);
+            $('#ProjectID').focus().attr('value',location.hash.replace('#',''));
+            $('#check').trigger('click');
+          }
       });
 
       function IsScratcher(name,res){
