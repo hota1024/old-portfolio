@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Is project comment by scratcher?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -73,7 +74,6 @@
           $('#result').fadeOut(200);
           $('#progress').show(100);
           $.get("https://scratch.mit.edu/api/v1/project/"+$('#ProjectID').val()+"/",function(data){
-            console.log(data);
             $('#project_url').attr('href',"https://scratch.mit.edu/projects/"+$('#ProjectID').val()+"/").text(data.title);
             $('#project_logo').attr('src',"https://cdn2.scratch.mit.edu/get_image/project/"+data.id+"_282x210.png");
           });
@@ -100,6 +100,8 @@
                 }
               });
             });
+          }).fail(function(e){
+            console.log(e);
           });
         });
           if(location.hash != ""){
@@ -110,7 +112,7 @@
       });
 
       function IsScratcher(name,res){
-        $.get("https://scratch.mit.edu/users/"+name+"/",res);
+        $.get("https://scratch.mit.edu/users/"+name+"/").done(res).fail(function(e){console.log(e);});
       }
 
       function ChartDraw(){
