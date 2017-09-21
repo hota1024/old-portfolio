@@ -69,6 +69,7 @@
       var chart;
       $(function(){
         $('#check').on('click',function(){
+          location.hash = $('#ProjectID').val();
           $('#result').fadeOut(200);
           $('#progress').show(100);
           $.get("https://scratch.mit.edu/api/v1/project/"+$('#ProjectID').val()+"/",function(data){
